@@ -41,8 +41,8 @@ public class LocalDate_LocalTime_LocalDateTime
         /*f*/LocalDate fechaResultante= LocalDate.of(2024,3,15);
         System.out.println("Fecha resultante de sumar 35 semanas a la fecha 15/03/2024: " + fechaResultante.plusWeeks(35));
 
-        /*g*/int añosTrabajados=LocalDate.now().compareTo(LocalDate.of(2012,7,6));
-        System.out.println("Años trabajados: " + añosTrabajados);
+        /*g*/int anosTrabajados=LocalDate.now().compareTo(LocalDate.of(2012,7,6));
+        System.out.println("Años trabajados: " + anosTrabajados);
 
         /*h*/int edadPersona= LocalDate.now().compareTo(LocalDate.of(2007,8,7));
         System.out.println("Edad de la persona: " + edadPersona);

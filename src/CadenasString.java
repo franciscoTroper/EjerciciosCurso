@@ -20,9 +20,9 @@ public class CadenasString
         System.out.println(tigre.substring(tigre.indexOf("Nunca"),"nunca".length()));
         System.out.println(tigre.substring(tigre.indexOf("mosca"),tigre.indexOf("mosca")+"mosca".length()));
         System.out.println(tigre.substring(tigre.indexOf("cabeza"),tigre.indexOf("cabeza")+"cabeza".length()));
-        System.out.println(tigre.indexOf("m"));
+        System.out.println(tigre.indexOf('m'));
         System.out.println(tigre.length());
-        System.out.println(tigre.lastIndexOf("m"));
+        System.out.println(tigre.lastIndexOf('m'));
 
     }
 }
