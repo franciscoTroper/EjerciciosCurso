@@ -5,7 +5,7 @@ public class estructurasDeControl
 {
     public static void main(String[] args)
     {
-        //Decir por la edad si se puede votar
+      /*  //Decir por la edad si se puede votar
         byte edad=15;
         if(edad>=18){System.out.println("Puede votar");}
         else {System.out.println("No puede votar");}
@@ -97,7 +97,7 @@ public class estructurasDeControl
                 break;
             default:
                 System.out.println("No puesiste bien el mes");
-        }
+        }*/
 
         //SCANNER Y FOR
 
@@ -133,7 +133,7 @@ public class estructurasDeControl
         }
         System.out.println("Media de numeros positivos: " +sumaTotalPositivos/cP);
         System.out.println("Media de numeros negativos: " +sumaTotalnegativos/cn);
-        System.out.println("Media de numeros ceros: " +cCeros);*/
+        System.out.println("Media de numeros ceros: " +cCeros);
         int sueldos=0,cantidadMayoresDe1000=0;
         for(c=0;c<10;c++)
         {
@@ -142,7 +142,23 @@ public class estructurasDeControl
             if (datosEntrada>1000){cantidadMayoresDe1000+=1;}
         }
         System.out.println("Total de sueldos: " + sueldos);
-        System.out.println("sueldos mayores a 1000: " +  cantidadMayoresDe1000);
+        System.out.println("sueldos mayores a 1000: " +  cantidadMayoresDe1000);*/
+
+        int sueldoMaximo=0;
+        System.out.println("Introduce un numero: ");
+        datosEntrada=scanner.nextInt();
+        int limiteContador=datosEntrada;
+
+        for(c=0;c<limiteContador;c++)
+        {
+            System.out.println("Introduce un sueldo");
+            datosEntrada=scanner.nextInt();
+            if (sueldoMaximo<datosEntrada){sueldoMaximo=datosEntrada;}
+            else {}
+        }
+        System.out.println("El sueldo maximo es: " + sueldoMaximo);
+
+
 
 
 
