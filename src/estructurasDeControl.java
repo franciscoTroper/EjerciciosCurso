@@ -112,7 +112,7 @@ public class estructurasDeControl
         Scanner scanner=new Scanner(System.in);
         int datosEntrada,c,d;
 
-       /* System.out.println("Escribe un numero: ");
+        System.out.println("Escribe un numero: ");
         datosEntrada= scanner.nextInt();
         for(c=0;c<=datosEntrada;c++)
         {
@@ -142,7 +142,7 @@ public class estructurasDeControl
             if (datosEntrada>1000){cantidadMayoresDe1000+=1;}
         }
         System.out.println("Total de sueldos: " + sueldos);
-        System.out.println("sueldos mayores a 1000: " +  cantidadMayoresDe1000);*/
+        System.out.println("sueldos mayores a 1000: " +  cantidadMayoresDe1000);
 
         int sueldoMaximo=0;
         System.out.println("Introduce un numero: ");
