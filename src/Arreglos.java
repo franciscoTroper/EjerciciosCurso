@@ -4,7 +4,7 @@ public class Arreglos
 {
     public static void main(String[] args)
     {
-        /*Scanner scanner=new Scanner(System.in);
+        Scanner scanner=new Scanner(System.in);
         int numeroMasPequeno=999999999;
         int[] numeros = new int [3];
          numeros[0]=5;
@@ -34,17 +34,8 @@ public class Arreglos
         for (int c=0;c<numerosMenosAMas.length;c++)
         {
             System.out.println(numerosMenosAMas[c]);
-        }*/
-        int[] numeros2 = {3,6,1,5,0,-12,4,7};
-        int numeroMenor = numeros2[0];
-        for(int i = 1; i < numeros2.length;i++)
-        {
-            if (numeroMenor > numeros2[i])
-            {
-                numeroMenor = numeros2[i];
-            }
         }
-        System.out.println("El numero menor del array es: " + numeroMenor);
+
     }
 
 }
