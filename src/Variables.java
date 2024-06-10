@@ -1,3 +1,5 @@
+import java.util.Scanner;
+
 public class Variables
 {
     public static void main(String[] args)
@@ -43,5 +45,15 @@ public class Variables
         float kilometros = Math.round(100*1.609344f) ;
         System.out.println("Kilometros: " + kilometros);
 
+        //VARIABLES DE TIPO
+        //Declarar una variable de tipo entero y de tipo decimal
+        int entero;
+        float decimal;
+        //Declarar una variable de tipo char con valor v
+        char uve='v';
+
+        //VARIABLES DE REFERENCIA En el monton y no en la pila
+        Scanner entradaDatos=new Scanner(System.in);
+        String cadena2="viaje";
     }
 }

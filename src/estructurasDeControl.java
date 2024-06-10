@@ -161,7 +161,7 @@ public class estructurasDeControl
         System.out.println("El sueldo maximo es: " + sueldoMaximo);*/
 
 
-        //BUCLES WHILE
+        /*//BUCLES WHILE
 
         // 1.Leer un número y mostrar su cuadrado, repetir el proceso hasta que se introduzca un número
         // negativo.
@@ -227,30 +227,38 @@ public class estructurasDeControl
             num=scanner.nextInt();
             numerosEjercicio4While+=num;
         }
-        System.out.println("La suma de todos los numeros introducidos es: " + numerosEjercicio4While);
+        System.out.println("La suma de todos los numeros introducidos es: " + numerosEjercicio4While);*/
 
+        //Indica por al edad si una persona puede estar conduciendo un ciclomtor
+        int edad=89;
+        boolean capacidadFisicaYMental=false;
+        if(edad>15&&capacidadFisicaYMental==true){System.out.println("Puede conducir");}
+        else {System.out.println("No puede conducir");}
 
+        //Decir si un numero es multiplo de 4
+        int numero3=34;
+        if (numero3%4==0){System.out.println("es multiplo");}
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+        //Poner en letra una nota; suspenso, suficiente,bien,notable,sobresaliente
+        char letra='a';
+        switch (letra)
+        {
+            case 'a': {System.out.println("suspenso"); break;}
+            case 'b': {System.out.println("Suficiente");break;}
+            case 'c': {System.out.println("bien");break;}
+            case 'd': {System.out.println("Notable");}
+            case 'e': {System.out.println("Sobresaliente");}
+            default:{System.out.println("Otra cosa");}
+        }
+        String nota;
+        nota=switch(letra)
+        {
+            case 'a' ->"Suspenso";
+            case 'b' ->"Suficiente";
+            case 'c' ->"Bien";
+            case 'd' ->"Notable";
+            case 'e' ->"Sobresaliente";
+            default ->"Valor erroneo";
+        };
     }
 }
