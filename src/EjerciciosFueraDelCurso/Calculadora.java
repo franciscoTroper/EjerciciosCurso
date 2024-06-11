@@ -12,6 +12,7 @@ public class Calculadora
     private static boolean salir;
     private static String operacion;
     private static String resultado;
+    private static boolean meLlevo;
 
     public Calculadora()
     {
@@ -21,6 +22,7 @@ public class Calculadora
         salir=false;
         operacion="sumar";
         resultado="0";
+        meLlevo=false;
     }
     public static void main(String[] args)
     {
@@ -42,24 +44,24 @@ public class Calculadora
         int contadorNumerosArriba=0,contadoresNumerosAbajo=0;
         String resultadoLocal="";
         char[]numArriba;
-        char[]numabajo;
+        char[]numAbajo;
         char[]total= resultado.toCharArray();
         char[]numero= numeros[contadorNumero].toCharArray();
         if (total.length>numero.length)
         {
-            numArriba=new char[total.length];numabajo=new char[numero.length];
+            numArriba=new char[total.length];numAbajo=new char[numero.length];
         }
         else
         {
-            numArriba=new char[numero.length];numabajo=new char[total.length];
+            numArriba=new char[numero.length];numAbajo=new char[total.length];
         }
 
         for (int a=0;a<numArriba.length;a++)
         {
-            resultadoLocal+=Character.getNumericValue(numArriba[contadorNumerosArriba]) + Character.getNumericValue(numabajo[contadoresNumerosAbajo]);
-            if (resultadoLocal>10)
+            resultadoLocal+=Character.getNumericValue(numArriba[contadorNumerosArriba]) + Character.getNumericValue(numAbajo[contadoresNumerosAbajo]);
+            if (Integer.parseInt(resultadoLocal)>10)
             {
-
+                meLlevo=true;
             }
         }
     }
