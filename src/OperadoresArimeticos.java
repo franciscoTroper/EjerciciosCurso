@@ -88,6 +88,26 @@ public class OperadoresArimeticos
                 contador++;
             }
         }
+        //solicitar un numero por el teclado y decir si es un numero primo.
+        int numEsPrimo;
+        System.out.println("Introduce un numero: ");
+        numEsPrimo= entradaDatos.nextInt();
+        int contadorprimos=0;
+        for (int a=1;a<numEsPrimo;a++)
+        {
+            if (numEsPrimo%a==0)
+            {
+                contadorprimos++;
+            }
+        }
+        if(contadorprimos<2)
+        {
+            System.out.println("El numero "+numEsPrimo+ " es primo");
+        }
+        else
+        {
+            System.out.println("El numero " +numEsPrimo+ " no es primo");
+        }
 
     }
 }
