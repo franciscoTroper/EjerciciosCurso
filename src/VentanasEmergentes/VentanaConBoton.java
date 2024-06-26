@@ -11,7 +11,7 @@ public class VentanaConBoton
         ventana=new JFrame();
         ventana.setSize(500,500);
         ventana.setVisible(true);
-        ventana.setLayout();
+       // ventana.setLayout();
         boton=new JButton("Pulsar");
         boton.setBounds(100,100,100,100);
         ventana.add(boton);
