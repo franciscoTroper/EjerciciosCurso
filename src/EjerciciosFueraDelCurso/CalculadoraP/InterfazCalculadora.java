@@ -4,18 +4,23 @@ import javax.swing.*;
 import java.awt.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
+import java.util.ArrayList;
 
 public class InterfazCalculadora
 {
     JFrame ventana;
     JButton[] botones;
-    JPanel pantallaOperaciones;
+    JTextField pantallaOperaciones;
+    Calculadora calculadora;
+    final JButton[] botonEscuchante = new JButton[1];
+    String[]numeros;
 
     public InterfazCalculadora()
     {
         ventana =new JFrame("Super Calculadora");
         botones=new JButton[20];
-        pantallaOperaciones =new JPanel();
+        pantallaOperaciones =new JTextField("0");
+        numeros=new String[1];
         ventana.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
         setVentana();
         {setBotones("@",140,400,50,50,0);
@@ -39,6 +44,9 @@ public class InterfazCalculadora
         setBotones("x",320,220,50,50,15);
         AddBotones();}//Agregando botones
         EscucharBotones();//Escuchando botones
+        setPanallaOperaciones();
+        calculadora=new Calculadora();
+        ventana.setVisible(true);
 
     }
     private void setVentana()
@@ -46,7 +54,7 @@ public class InterfazCalculadora
         ventana.setLayout(null);
         ventana.setSize(700,700);
         ventana.setLocationRelativeTo(null);
-        ventana.setVisible(true);
+
     }
     private void setBotones(String texto,int x,int y,int width,int height,int index)
     {
@@ -70,21 +78,53 @@ public class InterfazCalculadora
     }
     private void setPanallaOperaciones()
     {
-        //pantallaOperaciones.setBounds();
+        Font font = new Font("Arial", Font.PLAIN, 26);
+        pantallaOperaciones.setBackground(Color.BLACK);
+        pantallaOperaciones.setForeground(Color.YELLOW);
+        pantallaOperaciones.setBounds(160,160,200,50);
+        pantallaOperaciones.setFont(font);
+        pantallaOperaciones.setBorder(BorderFactory.createCompoundBorder(pantallaOperaciones.getBorder(),BorderFactory.createEmptyBorder(1,10,1,10)));
+        pantallaOperaciones.setEditable(false);
+        pantallaOperaciones.setHorizontalAlignment(JTextField.RIGHT);
+        ventana.add(pantallaOperaciones);
     }
     private void EscucharBotones()
     {
+
         for (int a=0;a< botones.length;a++)
         {
             try {
                 botones[a].addActionListener(new ActionListener() {
                     @Override
-                    public void actionPerformed(ActionEvent e) {
-                        System.out.println("Hola");
+                    public void actionPerformed(ActionEvent e)
+                    {
+                     botonEscuchante[0] =(JButton) e.getSource();
+
+                     try
+                     {
+
+                         byte numIntroducido=Byte.parseByte(botonEscuchante[0].getText());
+                         if ( numIntroducido>=0&&numIntroducido<=9) {calculadora.GuardarNumeros(numIntroducido);}
+                     }
+                     catch (Exception v)
+                     {
+                         String funcion=botonEscuchante[0].getText();
+                        if (funcion.equals("+")){calculadora.Sumar();}
+                        else if (funcion.equals("-")) {calculadora.Restar();}
+                        else if (funcion.equals("x")) {calculadora.Multiplicar();}
+                        else if (funcion.equals("/")) {calculadora.Dividir();}
+                        else if (funcion.equals("@")) {System.exit(1);}
+                        else if (funcion.equals("=")) {calculadora.Igual();}
+                     }
+
+
+
+
                     }
                 });
             }catch (Exception e){}
 
         }
     }
+
 }
