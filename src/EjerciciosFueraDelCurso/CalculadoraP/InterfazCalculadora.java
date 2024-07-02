@@ -2,6 +2,8 @@ package EjerciciosFueraDelCurso.CalculadoraP;
 
 import javax.swing.*;
 import java.awt.*;
+import java.awt.event.ActionEvent;
+import java.awt.event.ActionListener;
 
 public class InterfazCalculadora
 {
@@ -36,6 +38,7 @@ public class InterfazCalculadora
         setBotones("9",260,220,50,50,14);
         setBotones("x",320,220,50,50,15);
         AddBotones();}//Agregando botones
+        EscucharBotones();//Escuchando botones
 
     }
     private void setVentana()
@@ -67,6 +70,21 @@ public class InterfazCalculadora
     }
     private void setPanallaOperaciones()
     {
-        pantallaOperaciones.setBounds();
+        //pantallaOperaciones.setBounds();
+    }
+    private void EscucharBotones()
+    {
+        for (int a=0;a< botones.length;a++)
+        {
+            try {
+                botones[a].addActionListener(new ActionListener() {
+                    @Override
+                    public void actionPerformed(ActionEvent e) {
+                        System.out.println("Hola");
+                    }
+                });
+            }catch (Exception e){}
+
+        }
     }
 }
