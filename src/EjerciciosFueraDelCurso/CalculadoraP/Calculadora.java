@@ -10,6 +10,7 @@ public class Calculadora
     private byte numIntroducido;
     private int contador,contador2;
     private JTextField pantalla;
+    private boolean inicio;
 
     public Calculadora()
     {
@@ -17,6 +18,7 @@ public class Calculadora
        contador=0;
        contador2=0;
        pantalla=new JTextField();
+       inicio=true;
     }
 
 
@@ -37,14 +39,21 @@ public class Calculadora
             else if (funcion.equals("-")) {Restar();}
             else if (funcion.equals("x")) {Multiplicar();}
             else if (funcion.equals("/")) {Dividir();}
-            else if (funcion.equals("@")) {System.exit(1);}
+            else if (funcion.equals(".")) {;}
             else if (funcion.equals("=")) {Igual();}
         }
     }
     public void GuardarNumeros(byte num)
     {
-        numeros[contador][contador2]=String.valueOf(numIntroducido);
-        pantalla.setText(pantalla.getText()+numeros[contador][contador2]);
+        if (inicio) {pantalla.setText("");inicio=false;}
+        else if (numeros[contador][0].equals("0"))
+        {
+            pantalla.setText("");
+            numeros[contador][0]=String.valueOf(numIntroducido);
+        }
+
+        numeros[contador][contador2]=String.valueOf(numIntroducido);//Guardando el numero introducido
+        pantalla.setText(pantalla.getText()+numeros[contador][contador2]);//Mostrando el numero en pantalla
         contador2++;
     }
     public void Igual()

@@ -21,25 +21,25 @@ public class InterfazCalculadora
         pantallaOperaciones =new JTextField("0");
         ventana.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
         setVentana();
-        {setBotones("@",140,400,100,100,0);
-        setBotones("0",200,400,100,100,1);
-        setBotones("=",260,400,100,100,2);
-        setBotones("+",320,400,100,100,3);
+        {setBotones(".",225,445,75,75,0);
+        setBotones("0",300,445,75,75,1);
+        setBotones("=",375,445,75,75,2);
+        setBotones("+",450,445,75,75,3);
 
-        setBotones("1",140,340,100,100,4);
-        setBotones("2",200,340,100,100,5);
-        setBotones("3",260,340,100,100,6);
-        setBotones("-",320,340,100,100,7);
+        setBotones("1",225,370,75,75,4);
+        setBotones("2",300,370,75,75,5);
+        setBotones("3",375,370,75,75,6);
+        setBotones("-",450,370,75,75,7);
 
-        setBotones("4",140,280,100,100,8);
-        setBotones("5",200,280,100,100,9);
-        setBotones("6",260,280,100,100,10);
-        setBotones("/",320,280,100,100,11);
+        setBotones("4",225,295,75,75,8);
+        setBotones("5",300,295,75,75,9);
+        setBotones("6",375,295,75,75,10);
+        setBotones("/",450,295,75,75,11);
 
-        setBotones("7",140,220,100,100,12);
-        setBotones("8",200,220,100,100,13);
-        setBotones("9",260,220,100,100,14);
-        setBotones("x",320,220,100,100,15);
+        setBotones("7",225,220,75,75,12);
+        setBotones("8",300,220,75,75,13);
+        setBotones("9",375,220,75,75,14);
+        setBotones("x",450,220,75,75,15);
         AddBotones();}//Agregando botones
         EscucharBotones();//Escuchando botones
         setPanallaOperaciones();
@@ -79,7 +79,7 @@ public class InterfazCalculadora
         Font font = new Font("Arial", Font.PLAIN, 26);
         pantallaOperaciones.setBackground(Color.BLACK);
         pantallaOperaciones.setForeground(Color.YELLOW);
-        pantallaOperaciones.setBounds(160,160,400,50);
+        pantallaOperaciones.setBounds(225,160,300,50);
         pantallaOperaciones.setFont(font);
         pantallaOperaciones.setBorder(BorderFactory.createCompoundBorder(pantallaOperaciones.getBorder(),BorderFactory.createEmptyBorder(1,10,1,10)));
         pantallaOperaciones.setEditable(false);
