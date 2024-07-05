@@ -10,6 +10,8 @@
 
 package herencia.ejercicios;
 
+import java.util.Arrays;
+
 public class Alumno
 {
     private double[] notasParciales;
@@ -22,6 +24,14 @@ public class Alumno
     {
         this.nombreCompleto=nombreCompleto;
         notasParciales=new double[numeroNotas];
+    }
+
+    @Override
+    public String toString() {
+        return "Alumno{" +
+                "notasParciales=" + Arrays.toString(notasParciales) +
+                ", nombreCompleto='" + nombreCompleto + '\'' +
+                '}';
     }
 
     //Asignar notas parciales
