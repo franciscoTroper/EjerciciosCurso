@@ -4,5 +4,12 @@ package ConexionConSqL;
   connection --> usuario, contraseña, tecnologia, servido, puerto
   Command --> sentencia de SQL, DML {Select,Insert,Update,Delete}
   ResultSet es una clase recibir los datos de una consulta
+
+ Clase statement: tiene dos metodos executequery y executeupdate.
+ Clase resultSet tiene dos metodos  next() que leer la fila y el metodo getxxx(nombreColumna)
+
+ El jdvc tiene una clase driver manager. su funcion es gestionar todos los drivers
+
+
  */
 
