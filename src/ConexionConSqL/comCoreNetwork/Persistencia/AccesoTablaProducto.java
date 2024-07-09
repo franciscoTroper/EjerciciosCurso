@@ -40,6 +40,9 @@ public class AccesoTablaProducto extends Conexion
 
         }
         //6 Devolevr el resultado.
+        rejilla.close();
+        comando.close();
+        cerrarconexion();
         return p1;
     }
     public List<Producto> consultarTodos() throws SQLException {
@@ -65,8 +68,58 @@ public class AccesoTablaProducto extends Conexion
            resultado.add(p1);
         }
         //6 Devolevr el resultado.
+        rejilla.close();
+        comando.close();
+        cerrarconexion();
         return resultado;
 
     }
+    public int insertaProducto(Producto productoP) throws SQLException {
+     //1. Declarar variables
+        Statement comando;
+        int resultado;
+        String sql="insert into products (product_id,product_name,discontinued) values("+ productoP.getId_producto()+ ", '"+ productoP.getNombre_producto() +"',1)";
+        //2. Abrir conexion
+        abrirConexion();
+        //3. Obtener statement
+        comando=miconexion.createStatement();
+        resultado=comando.executeUpdate(sql);
+        comando.close();
+        cerrarconexion();
+        //4. Devolver resultado
+        return resultado;
+    }
+    public int actualizarProducto(Producto productoP) throws SQLException {
+        //1. Declarar variables
+        Statement comando;
+        int resultado;
+        String sql="update products set product_name='"+ productoP.getNombre_producto()+"' where product_id= " +
+        productoP.getId_producto();
+        //2. Abrir conexion
+        abrirConexion();
+        //3. Obtener statement
+        comando=miconexion.createStatement();
+        resultado=comando.executeUpdate(sql);
+        comando.close();
+        cerrarconexion();
+        //4. Devolver resultado
+        return resultado;
+    }
+    public int BorrarProducto(int id_productoP) throws SQLException {
+        //1. Declarar variables
+        Statement comando;
+        int resultado;
+        String sql = "delete from products where product_id = " + id_productoP;
+        //2. Abrir conexion
+        abrirConexion();
+        //3. Obtener statement
+        comando = miconexion.createStatement();
+        resultado = comando.executeUpdate(sql);
+        comando.close();
+        cerrarconexion();
+        //4. Devolver resultado
+        return resultado;
+    }
+
 
 }
