@@ -85,34 +85,34 @@ public class Main
         ProgramaScanner();
 
     }
-    public static void insertarEmpleado(String sentencia) throws SQLException
-    {
-        //Guardo los datos
-        System.out.println("Inserta un empleado");
-        System.out.print("Id: ");
-        idEmpleado=scanner.nextInt();
-        System.out.print("Nombre: ");
-        nombre= scanner.next();
-        System.out.print("Apellido: ");
-        apellido= scanner.next();
-
-        comando=c1.getMiconexion().createStatement();
-        resultado=comando.executeUpdate("insert into employees (employee_id, first_name, last_name) values ("+idEmpleado+", '"+nombre+"','"+apellido+"')");
-        if (resultado>0)
-        {
-            System.out.println("Has insertado el empleado con exito");
-            comando.close();
-        }
-        else
-        {
-            System.out.println("No has insertado ningun empleado");
-            comando.close();
-
-        }
-
-        ProgramaScanner();
-
-    }
+//    public static void insertarEmpleado(String sentencia) throws SQLException
+//    {
+//        //Guardo los datos
+//        System.out.println("Inserta un empleado");
+//        System.out.print("Id: ");
+//        idEmpleado=scanner.nextInt();
+//        System.out.print("Nombre: ");
+//        nombre= scanner.next();
+//        System.out.print("Apellido: ");
+//        apellido= scanner.next();
+//
+//        comando=c1.getMiconexion().createStatement();
+//        resultado=comando.executeUpdate("insert into employees (employee_id, first_name, last_name) values ("+idEmpleado+", '"+nombre+"','"+apellido+"')");
+//        if (resultado>0)
+//        {
+//            System.out.println("Has insertado el empleado con exito");
+//            comando.close();
+//        }
+//        else
+//        {
+//            System.out.println("No has insertado ningun empleado");
+//            comando.close();
+//
+//        }
+//
+//        ProgramaScanner();
+//
+//    }
 
     public static void modificarEmpleado() throws SQLException {
         System.out.print("Introduce el id del empleado: ");
