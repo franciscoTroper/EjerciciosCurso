@@ -13,7 +13,7 @@ public class Ejercicio2
     {
         Conexion c1=new Conexion();
         try {
-            c1.abrirConexion("nortwind3");
+            c1.abrir("nortwind3");
             Statement statement=c1.getMiconexion().createStatement();
             //String consulta="select * from order_details where product_id = 11";
             String consulta="select sum(unit_price) as precio,sum(quantity) as cantidades from order_details where product_id=11";

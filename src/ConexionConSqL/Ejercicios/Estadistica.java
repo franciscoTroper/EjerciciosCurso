@@ -5,7 +5,6 @@ import ConexionConSqL.comCoreNetwork.Persistencia.Conexion;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
-import java.sql.Statement;
 
 public class Estadistica
 {
@@ -57,7 +56,7 @@ public class Estadistica
     public void consultaPorProducto(int idProducto)throws SQLException
     {
         Conexion c1=new Conexion();
-        c1.abrirConexion("nortwind3");
+        c1.abrir("nortwind3");
         String sentencia="select sum(unit_price) as precio,sum(quantity) as cantidades from order_details where product_id=?";
         PreparedStatement preparedStatementstatement=c1.getMiconexion().prepareStatement(sentencia);
         preparedStatementstatement.setInt(1,idProducto);

@@ -30,7 +30,7 @@ public class ejercicioBaseDatosEstacionAutobuses
     public static List<String> obtener(String sentencia,String[] clases,List<Object>datos,String[] nombreColumnas) throws SQLException
     {
         List<String>datosOutLocal=new ArrayList<>();
-        c1.abrirConexion("Estacionautobuses");
+        c1.abrir("Estacionautobuses");
         preparedStatement=c1.getMiconexion().prepareStatement(sentencia);
         for(int a=0;a< clases.length;a++)
         {
@@ -61,7 +61,7 @@ public class ejercicioBaseDatosEstacionAutobuses
     public static List<String> obtener() throws SQLException
     {
 
-        c1.abrirConexion("Estacionautobuses");
+        c1.abrir("Estacionautobuses");
         System.out.println("introduce el DNI: ");
         String dniLocal=scanner.next();
         String sentencia="select * from conductores where dni = ?";
@@ -78,13 +78,13 @@ public class ejercicioBaseDatosEstacionAutobuses
         }
         resultSet.close();
         preparedStatement.close();
-        c1.cerrarconexion();
+        c1.cerrar();
         programaConductores();
         return datos;
     }
     public static int ejecutar() throws SQLException
     {
-        c1.abrirConexion("Estacionautobuses");
+        c1.abrir("Estacionautobuses");
 
         if (respuestaMenu==1)
         {
@@ -130,7 +130,7 @@ public class ejercicioBaseDatosEstacionAutobuses
             return filasAfectadas;
         }
         preparedStatement.close();
-        c1.cerrarconexion();
+        c1.cerrar();
         return filasAfectadas;
     }
     public static void programaConductores() throws SQLException {

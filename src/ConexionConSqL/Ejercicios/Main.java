@@ -5,8 +5,6 @@ import ConexionConSqL.comCoreNetwork.Persistencia.Conexion;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.sql.Statement;
-import java.util.ArrayList;
-import java.util.List;
 import java.util.Scanner;
 //Ejercicio de practica de acceso a BBDD
 //Ejercitando el Statement
@@ -31,7 +29,7 @@ public class Main
     public static void main(String[] args)
     {
         c1=new Conexion();
-        try {c1.abrirConexion("nortwind3");}
+        try {c1.abrir("nortwind3");}
         catch (SQLException e) {e.getMessage(); throw new RuntimeException(e);}
         try {
             ProgramaScanner();

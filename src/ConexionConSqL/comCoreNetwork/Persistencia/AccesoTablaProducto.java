@@ -16,7 +16,7 @@ public class AccesoTablaProducto extends Conexion
         String sqlSentencia="Select * from products where product_id= "+id_producto;
         Producto p1;
         //1.Abrir la conexion
-        abrirConexion("nortwind3");
+        abrir("nortwind3");
         //2. Crear el statement - se obtiene de la conexion.
         comando=miconexion.createStatement();
         //3 Ejecutar la sentencia
@@ -42,7 +42,7 @@ public class AccesoTablaProducto extends Conexion
         //6 Devolevr el resultado.
         rejilla.close();
         comando.close();
-        cerrarconexion();
+        cerrar();
         return p1;
     }
     public List<Producto> consultarTodos() throws SQLException {
@@ -51,7 +51,7 @@ public class AccesoTablaProducto extends Conexion
         String sqlSentencia="Select * from products;";
         List<Producto> resultado=new ArrayList<>();
         //1.Abrir la conexion
-        abrirConexion("nortwind3");
+        abrir("nortwind3");
         //2. Crear el statement - se obtiene de la conexion.
         comando=miconexion.createStatement();
         //3 Ejecutar la sentencia
@@ -70,7 +70,7 @@ public class AccesoTablaProducto extends Conexion
         //6 Devolevr el resultado.
         rejilla.close();
         comando.close();
-        cerrarconexion();
+        cerrar();
         return resultado;
 
     }
@@ -80,12 +80,12 @@ public class AccesoTablaProducto extends Conexion
         int resultado;
         String sql="insert into products (product_id,product_name,discontinued) values("+ productoP.getId_producto()+ ", '"+ productoP.getNombre_producto() +"',1)";
         //2. Abrir conexion
-        abrirConexion("nortwind3");
+        abrir("nortwind3");
         //3. Obtener statement
         comando=miconexion.createStatement();
         resultado=comando.executeUpdate(sql);
         comando.close();
-        cerrarconexion();
+        cerrar();
         //4. Devolver resultado
         return resultado;
     }
@@ -96,12 +96,12 @@ public class AccesoTablaProducto extends Conexion
         String sql="update products set product_name='"+ productoP.getNombre_producto()+"' where product_id= " +
         productoP.getId_producto();
         //2. Abrir conexion
-        abrirConexion("nortwind3");
+        abrir("nortwind3");
         //3. Obtener statement
         comando=miconexion.createStatement();
         resultado=comando.executeUpdate(sql);
         comando.close();
-        cerrarconexion();
+        cerrar();
         //4. Devolver resultado
         return resultado;
     }
@@ -111,12 +111,12 @@ public class AccesoTablaProducto extends Conexion
         int resultado;
         String sql = "delete from products where product_id = " + id_productoP;
         //2. Abrir conexion
-        abrirConexion("nortwind3");
+        abrir("nortwind3");
         //3. Obtener statement
         comando = miconexion.createStatement();
         resultado = comando.executeUpdate(sql);
         comando.close();
-        cerrarconexion();
+        cerrar();
         //4. Devolver resultado
         return resultado;
     }

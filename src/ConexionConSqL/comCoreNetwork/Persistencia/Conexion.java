@@ -8,7 +8,7 @@ public class Conexion
 {
     protected Connection miconexion;
 
-    public void abrirConexion(String baseDedatos) throws SQLException
+    public void abrir(String baseDedatos) throws SQLException
     {
         //1 Decir el driver que vamos a usar.
 
@@ -20,7 +20,7 @@ public class Conexion
         System.out.println("conexion abierta");
 
     }
-    public void cerrarconexion() throws SQLException {miconexion.close();}
+    public void cerrar() throws SQLException {miconexion.close();}
     public Conexion() {}
     public Connection getMiconexion() {return miconexion;}
     public void setMiconexion(Connection miconexion) {this.miconexion = miconexion;}
