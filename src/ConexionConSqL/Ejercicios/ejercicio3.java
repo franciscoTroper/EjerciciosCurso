@@ -14,7 +14,7 @@ public class ejercicio3
     public static void main(String[] args)
     {
         try {
-            c1.abrirConexion();
+            c1.abrirConexion("nortwind3");
             obtenerDatos("select * from order_details where order_id=? and product_id=? and unit_price=?" +
                     " and quantity=? and discount=?;");
         } catch (SQLException e) {
@@ -22,7 +22,7 @@ public class ejercicio3
         }
     }
     public static boolean consultarOrder(int id) throws SQLException {
-        c1.abrirConexion();
+        c1.abrirConexion("nortwind3");
         String estamento="select order_id from orders where order_id=?";
         PreparedStatement preparedStatement=c1.getMiconexion().prepareStatement(estamento);
         preparedStatement.setInt(1,id);

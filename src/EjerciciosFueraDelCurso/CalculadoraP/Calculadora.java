@@ -11,6 +11,7 @@ public class Calculadora
     private int contador,contador2;
     private JTextField pantalla;
     private boolean inicio;
+    private byte operacion;
 
     public Calculadora()
     {
@@ -34,11 +35,13 @@ public class Calculadora
         }
         catch (Exception v)
         {
+            contador++;
+            pantalla.setText("0"); inicio=true;
             String funcion=botonEscuchante.getText();
-            if (funcion.equals("+")){Sumar();}
-            else if (funcion.equals("-")) {Restar();}
-            else if (funcion.equals("x")) {Multiplicar();}
-            else if (funcion.equals("/")) {Dividir();}
+            if (funcion.equals("+")){operacion=1;Sumar();}
+            else if (funcion.equals("-")) {operacion=2;Restar();}
+            else if (funcion.equals("x")) {operacion=3;Multiplicar();}
+            else if (funcion.equals("/")) {operacion=4;Dividir();}
             else if (funcion.equals(".")) {;}
             else if (funcion.equals("=")) {Igual();}
         }
@@ -62,19 +65,19 @@ public class Calculadora
     }
     public void Sumar()
     {
-        contador++;
+
     }
     public void Restar()
     {
-        contador++;
+
     }
     public void Multiplicar()
     {
-        contador++;
+
     }
     public void Dividir()
     {
-        contador++;
+
     }
 
 }

@@ -57,7 +57,7 @@ public class Estadistica
     public void consultaPorProducto(int idProducto)throws SQLException
     {
         Conexion c1=new Conexion();
-        c1.abrirConexion();
+        c1.abrirConexion("nortwind3");
         String sentencia="select sum(unit_price) as precio,sum(quantity) as cantidades from order_details where product_id=?";
         PreparedStatement preparedStatementstatement=c1.getMiconexion().prepareStatement(sentencia);
         preparedStatementstatement.setInt(1,idProducto);

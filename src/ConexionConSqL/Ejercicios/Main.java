@@ -31,7 +31,7 @@ public class Main
     public static void main(String[] args)
     {
         c1=new Conexion();
-        try {c1.abrirConexion();}
+        try {c1.abrirConexion("nortwind3");}
         catch (SQLException e) {e.getMessage(); throw new RuntimeException(e);}
         try {
             ProgramaScanner();

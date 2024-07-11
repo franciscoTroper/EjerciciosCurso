@@ -16,7 +16,7 @@ public class AccesoTablaProducto extends Conexion
         String sqlSentencia="Select * from products where product_id= "+id_producto;
         Producto p1;
         //1.Abrir la conexion
-        abrirConexion();
+        abrirConexion("nortwind3");
         //2. Crear el statement - se obtiene de la conexion.
         comando=miconexion.createStatement();
         //3 Ejecutar la sentencia
@@ -51,7 +51,7 @@ public class AccesoTablaProducto extends Conexion
         String sqlSentencia="Select * from products;";
         List<Producto> resultado=new ArrayList<>();
         //1.Abrir la conexion
-        abrirConexion();
+        abrirConexion("nortwind3");
         //2. Crear el statement - se obtiene de la conexion.
         comando=miconexion.createStatement();
         //3 Ejecutar la sentencia
@@ -80,7 +80,7 @@ public class AccesoTablaProducto extends Conexion
         int resultado;
         String sql="insert into products (product_id,product_name,discontinued) values("+ productoP.getId_producto()+ ", '"+ productoP.getNombre_producto() +"',1)";
         //2. Abrir conexion
-        abrirConexion();
+        abrirConexion("nortwind3");
         //3. Obtener statement
         comando=miconexion.createStatement();
         resultado=comando.executeUpdate(sql);
@@ -96,7 +96,7 @@ public class AccesoTablaProducto extends Conexion
         String sql="update products set product_name='"+ productoP.getNombre_producto()+"' where product_id= " +
         productoP.getId_producto();
         //2. Abrir conexion
-        abrirConexion();
+        abrirConexion("nortwind3");
         //3. Obtener statement
         comando=miconexion.createStatement();
         resultado=comando.executeUpdate(sql);
@@ -111,7 +111,7 @@ public class AccesoTablaProducto extends Conexion
         int resultado;
         String sql = "delete from products where product_id = " + id_productoP;
         //2. Abrir conexion
-        abrirConexion();
+        abrirConexion("nortwind3");
         //3. Obtener statement
         comando = miconexion.createStatement();
         resultado = comando.executeUpdate(sql);
