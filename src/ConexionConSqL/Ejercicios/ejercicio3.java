@@ -20,29 +20,6 @@ public class ejercicio3
         } catch (SQLException e) {
             throw new RuntimeException(e);
         }
-
-//        try{
-//            if (consultarOrder(10248))
-//            {
-//                String estamento="Insert into order_details(order_id,product_id,unit_price,quantity,discount) values" +
-//                        "(?,?,?,?,?)";
-//                preparedStatement=c1.getMiconexion().prepareStatement(estamento);
-//                preparedStatement.setInt(1,10248);
-//                preparedStatement.setInt(2,70);
-//                preparedStatement.setDouble(3,356);
-//                preparedStatement.setInt(4,9);
-//                preparedStatement.setFloat(5,10);
-//                int resultado=preparedStatement.executeUpdate();
-//                System.out.println(resultado);
-//
-//
-//            }
-//            else {}
-//        }catch (Exception e){}
-
-
-
-
     }
     public static boolean consultarOrder(int id) throws SQLException {
         c1.abrirConexion();
@@ -77,6 +54,25 @@ public class ejercicio3
             System.out.print("]");
         }
 
+    }
+    public static void insertar()
+    {
+                try{
+            if (consultarOrder(10248))
+            {
+                String estamento="Insert into order_details(order_id,product_id,unit_price,quantity,discount) values" +
+                        "(?,?,?,?,?)";
+                preparedStatement=c1.getMiconexion().prepareStatement(estamento);
+                preparedStatement.setInt(1,10248);
+                preparedStatement.setInt(2,70);
+                preparedStatement.setDouble(3,356);
+                preparedStatement.setInt(4,9);
+                preparedStatement.setFloat(5,10);
+                int resultado=preparedStatement.executeUpdate();
+                System.out.println(resultado);
+            }
+            else {}
+        }catch (Exception e){}
     }
 
 }
