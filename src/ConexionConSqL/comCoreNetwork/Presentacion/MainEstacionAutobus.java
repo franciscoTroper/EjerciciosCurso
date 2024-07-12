@@ -469,7 +469,7 @@ public class MainEstacionAutobus
         if (contadorInterrogacionesquitadas>0)
         {
             preparedStatement=conexion.getMiconexion().prepareStatement("update visitas value("+interrogaciones+") where id_visita=?");
-            preparedStatement.
+
         }
 
 

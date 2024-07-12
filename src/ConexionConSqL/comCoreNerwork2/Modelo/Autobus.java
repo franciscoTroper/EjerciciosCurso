@@ -1,6 +1,4 @@
-package ConexionConSqL.comCoreNetwork.Modelo;
-
-import java.sql.Date;
+package ConexionConSqL.comCoreNerwork2.Modelo;
 
 public class Autobus
 {

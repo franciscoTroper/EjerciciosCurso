@@ -1,4 +1,4 @@
-package ConexionConSqL.comCoreNetwork.Modelo;
+package ConexionConSqL.comCoreNerwork2.Modelo;
 
 import java.sql.Date;
 
