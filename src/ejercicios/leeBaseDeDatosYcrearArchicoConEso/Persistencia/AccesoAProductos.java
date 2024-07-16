@@ -1,7 +1,9 @@
 package ejercicios.leeBaseDeDatosYcrearArchicoConEso.Persistencia;
 
 import ejercicios.leeBaseDeDatosYcrearArchicoConEso.Modelo.Proveedor;
+import ejercicios.leeBaseDeDatosYcrearArchicoConEso.Modelo.RangoComisiones;
 
+import java.math.BigDecimal;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
@@ -36,19 +38,20 @@ public class AccesoAProductos
         conexion.cerrar();
         return outDatos;
     }
-    public int insertarDatos() throws SQLException
+    public int insertarDatos(RangoComisiones rangoComisiones) throws SQLException
     {
         int valueout=0;
-        conexion.abrir("nortwind3");
-        preparedStatement=conexion.getMiconexion().prepareStatement("insert into (limite_inferior,limite_superior,porcentaje) values (?,?,?,?,?,?,?)");
-//        preparedStatement.setBigDecimal();
-//        preparedStatement.setBigDecimal();
-//        preparedStatement.setBigDecimal();
-//        preparedStatement.setBigDecimal();
-//        preparedStatement.setBigDecimal();
-//        preparedStatement.setBigDecimal();
-//        preparedStatement.setDouble();
-        valueout=preparedStatement.executeUpdate();
+        conexion.abrir("Darthwind");
+
+            preparedStatement=conexion.getMiconexion().prepareStatement("insert into rango_comisiones (limite_inferior,limite_superior,porcentaje) values (?,?,?)");
+            preparedStatement.setBigDecimal(1,new BigDecimal(rangoComisiones.getLimiteInferior()));
+            preparedStatement.setBigDecimal(2,new BigDecimal(rangoComisiones.getLimiteSuperior()));
+            preparedStatement.setDouble(3,rangoComisiones.getPorcentae());
+            valueout=preparedStatement.executeUpdate();
+            preparedStatement.close();
+            conexion.cerrar();
+
+
         return valueout;
     }
 }
