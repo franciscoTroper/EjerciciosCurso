@@ -10,7 +10,7 @@
     <orderEntry type="module-library" exported="">
       <library>
         <CLASSES>
-          <root url="jar://$MODULE_DIR$/../../../Java/LibreriasArchivosJar/r__postgresql42.7.1_1720180877.jar!/" />
+          <root url="jar://$MODULE_DIR$/r__postgresql42.7.1_1720180877.jar!/" />
         </CLASSES>
         <JAVADOC />
         <SOURCES />
