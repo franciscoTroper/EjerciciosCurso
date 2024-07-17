@@ -77,8 +77,8 @@ public class EjercicioFicheros
         {
             for (int b=0;b<4;b++)
             {
-                int valor1=Integer.parseInt(String.valueOf(datosArchivo1.get(b)));
-                int valor2=Integer.parseInt(String.valueOf(datosArchivo2.get(a)));
+                int valor1=Integer.parseInt(datosArchivo1.get(b));
+                int valor2=Integer.parseInt(datosArchivo2.get(a));
                 if (valor1<valor2)
                 {datosArchivo3.add(datosArchivo1.get(b));}
                 else
