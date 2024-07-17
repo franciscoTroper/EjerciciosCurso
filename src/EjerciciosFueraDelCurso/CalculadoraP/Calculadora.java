@@ -2,24 +2,21 @@ package EjerciciosFueraDelCurso.CalculadoraP;
 
 import javax.swing.*;
 import java.awt.event.ActionEvent;
+import java.util.ArrayList;
+import java.util.List;
 import java.util.Scanner;
 
 public class Calculadora
 {
-    private String[][]numeros;
+    private List<String>numeros=new ArrayList<>();
+    private List<String>numeros2=new ArrayList<>();
     private byte numIntroducido;
-    private int contador,contador2;
-    private JTextField pantalla;
-    private boolean inicio;
+    private int contador=0,contador2=0;
+    private JTextField pantalla=new JTextField();
+    private boolean inicio=true;
     private byte operacion;
 
-    public Calculadora()
-    {
-       numeros=new String[2][99];
-       contador=0;
-       contador2=0;
-       pantalla=new JTextField();
-       inicio=true;
+    public Calculadora() {
     }
 
 
@@ -27,7 +24,6 @@ public class Calculadora
     {
         pantalla=pantallaCalculadora;
         JButton botonEscuchante =(JButton) e.getSource();
-
         try
         {
             numIntroducido=Byte.parseByte(botonEscuchante.getText());
@@ -49,14 +45,14 @@ public class Calculadora
     public void GuardarNumeros(byte num)
     {
         if (inicio) {pantalla.setText("");inicio=false;}
-        else if (numeros[contador][0].equals("0"))
+        else if (numeros.get(0).equals("0"))
         {
             pantalla.setText("");
-            numeros[contador][0]=String.valueOf(numIntroducido);
+            numeros.add(String.valueOf(numIntroducido));
         }
 
-        numeros[contador][contador2]=String.valueOf(numIntroducido);//Guardando el numero introducido
-        pantalla.setText(pantalla.getText()+numeros[contador][contador2]);//Mostrando el numero en pantalla
+        numeros.add(String.valueOf(numIntroducido));//Guardando el numero introducido
+        pantalla.setText(pantalla.getText()+numeros.get(0));//Mostrando el numero en pantalla
         contador2++;
     }
     public void Igual()
