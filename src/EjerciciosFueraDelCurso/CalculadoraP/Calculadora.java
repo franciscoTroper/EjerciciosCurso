@@ -4,17 +4,17 @@ import javax.swing.*;
 import java.awt.event.ActionEvent;
 import java.util.ArrayList;
 import java.util.List;
-import java.util.Scanner;
 
 public class Calculadora
 {
-    private List<String>numeros=new ArrayList<>();
-    private List<String>numeros2=new ArrayList<>();
+    private String numeros="";
+    private String numeros2="";
+    private String resultado="";
     private byte numIntroducido;
-    private int contador=0,contador2=0;
     private JTextField pantalla=new JTextField();
     private boolean inicio=true;
     private byte operacion;
+    private boolean queNumero=false;
 
     public Calculadora() {
     }
@@ -24,36 +24,23 @@ public class Calculadora
     {
         pantalla=pantallaCalculadora;
         JButton botonEscuchante =(JButton) e.getSource();
-        try
-        {
-            numIntroducido=Byte.parseByte(botonEscuchante.getText());
-            if (numIntroducido>=0&&numIntroducido<=9) {GuardarNumeros(numIntroducido);}
-        }
-        catch (Exception v)
-        {
-            contador++;
-            pantalla.setText("0"); inicio=true;
-            String funcion=botonEscuchante.getText();
-            if (funcion.equals("+")){operacion=1;Sumar();}
-            else if (funcion.equals("-")) {operacion=2;Restar();}
-            else if (funcion.equals("x")) {operacion=3;Multiplicar();}
-            else if (funcion.equals("/")) {operacion=4;Dividir();}
-            else if (funcion.equals(".")) {;}
-            else if (funcion.equals("=")) {Igual();}
+        try {numIntroducido=Byte.parseByte(botonEscuchante.getText()); introduciendo();}
+        catch (Exception v) {
+                                pantalla.setText("0"); inicio=true;
+                                String funcion=botonEscuchante.getText();
+                                if (funcion.equals("+")){operacion=1;Sumar();}
+                                else if (funcion.equals("-")) {operacion=2;Restar();}
+                                else if (funcion.equals("x")) {operacion=3;Multiplicar();}
+                                else if (funcion.equals("/")) {operacion=4;Dividir();}
+                                else if (funcion.equals(".")) {;}
+                                else if (funcion.equals("=")) {Igual();}
         }
     }
-    public void GuardarNumeros(byte num)
+    public void introduciendo()
     {
-        if (inicio) {pantalla.setText("");inicio=false;}
-        else if (numeros.get(0).equals("0"))
-        {
-            pantalla.setText("");
-            numeros.add(String.valueOf(numIntroducido));
-        }
-
-        numeros.add(String.valueOf(numIntroducido));//Guardando el numero introducido
-        pantalla.setText(pantalla.getText()+numeros.get(0));//Mostrando el numero en pantalla
-        contador2++;
+        borrarCeroDeInicio();
+        guardarNumeros();
+        numeroGuardadoAPantalla();
     }
     public void Igual()
     {
@@ -75,5 +62,20 @@ public class Calculadora
     {
 
     }
+    private void borrarCeroDeInicio() {
+        if (inicio) {pantalla.setText("");inicio=false;}
+    }
+    private void guardarNumeros() {
+        if (fqueNumero()){numeros=String.valueOf(numIntroducido)+numeros;}
+        else {numeros2=String.valueOf(numIntroducido)+numeros2;}
+    }
+    private void numeroGuardadoAPantalla() {
+        pantalla.setText(pantalla.getText()+numeros);
+    }
+    private boolean fqueNumero() {
+        if (queNumero){return false;}
+        else {return true;}
+    }
+
 
 }
