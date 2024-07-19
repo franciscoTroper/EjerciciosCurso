@@ -27,8 +27,6 @@ public class servidorTienda
                 PrintWriter sRespuesta = new PrintWriter(s1.getOutputStream(),true);
                 sRespuesta.println("Se han recibido sus datos correctamente id -> " + contadorTransaccion);
 
-
-
             }
 
         } catch (IOException ex) {
@@ -38,6 +36,28 @@ public class servidorTienda
                 fs.close();
             } catch (IOException ex) {
                 System.out.println(ex.toString());
+            }
+        }
+
+    }
+    public void copia()
+    {
+        {
+            BufferedReader bf;
+            PrintWriter sRespuesta;
+            String respuesta = "";
+            try (ServerSocket servidor = new ServerSocket(3000);){
+                while (true){
+                    System.out.println("En espera de peticiones ...");
+                    Socket s1 = servidor.accept();
+                    bf = new BufferedReader(new InputStreamReader(s1.getInputStream()));
+                    System.out.println(bf.readLine());
+                    sRespuesta = new PrintWriter(s1.getOutputStream(),true);
+                    sRespuesta.println("Se ha recibido su Hola mundo!!");
+                }
+
+            } catch (IOException e) {
+                System.out.println(e.toString());
             }
         }
 
