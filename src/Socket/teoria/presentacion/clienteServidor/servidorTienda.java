@@ -21,7 +21,7 @@ public class servidorTienda
                 //4. Leer el Stream
                 contadorTransaccion++;
                 BufferedReader bf = new BufferedReader(new InputStreamReader(s1.getInputStream()));
-                fs.write(bf.readLine() + "\n");
+                fs.write(bf.readLine()+"\n");
                 fs.flush();
                 //5. Escribir la confirmación de recibido
                 PrintWriter sRespuesta = new PrintWriter(s1.getOutputStream(),true);
